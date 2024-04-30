@@ -1,6 +1,8 @@
 * {
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Kanit", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 body {
@@ -23,6 +25,7 @@ body {
   -webkit-box-shadow: -1px 17px 46px -20px rgba(255, 255, 255, 0.77);
   -moz-box-shadow: -1px 17px 46px -20px rgba(255, 255, 255, 0.77);
   box-shadow: -1px 17px 46px -20px rgba(255, 255, 255, 0.77);
+  margin-bottom: 40px;
 }
 
 .user-input:hover {
@@ -31,14 +34,28 @@ body {
   cursor: pointer;
 }
 
+.btns {
+  display: flex;
+  padding: 5px;
+}
+
+.radios {
+  display: flex;
+  align-items: center;
+}
+
+.radios h4 {
+  margin-right: 30px;
+}
+
 .user-input button {
   border: none;
   height: 50px;
   width: 100px;
   background-color: #5a932c;
   color: whitesmoke;
-  font-weight: bold;
   cursor: pointer;
+  margin: 5px;
 }
 
 button:hover {
@@ -54,5 +71,12 @@ button:hover {
 }
 
 .w h4 {
-  margin: 20px;
+  margin: 10px;
+}
+
+.results {
+  padding: 20px;
+  background-color: #36581b;
+  width: 15rem;
+  margin: auto;
 }
