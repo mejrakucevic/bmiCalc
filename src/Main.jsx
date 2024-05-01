@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../src/Main.css";
-import { useState } from "react";
 
 function Main() {
   const [age, setAge] = useState();
-  const [weight, setWeight] = useState();
   const [height, setHeight] = useState();
+  const [weight, setWeight] = useState();
+
   const [bmi, setBmi] = useState();
   const [msg, setMsg] = useState("");
 
@@ -13,31 +13,37 @@ function Main() {
     window.location.reload();
   };
 
-  const handleCalculation = (e) => {
+  const handleCalculations = (e) => {
     e.preventDefault();
-
     if (weight === 0 || height === 0) {
       alert("Please enter valid height/weight");
     } else {
       let bmiFormula = weight / (height / 100) ** 2;
       setBmi(bmiFormula.toFixed(2));
-
-      if (bmiFormula < 18.5) {
-        setMsg("You're underweight");
-      } else if (bmiFormula >= 18.5 && bmiFormula <= 25) {
-        setMsg("You're at healthy weight🎉");
-      } else {
-        setMsg("You're overweight");
-      }
     }
   };
+
+  useEffect(() => {
+    if (bmi) {
+      if (bmi <= 18.5) {
+        setMsg("You are underweight");
+        document.getElementById("result").style.backgroundColor = "red";
+      } else if (bmi >= 18.5 && bmi <= 25) {
+        setMsg("You're at a healthy weight!🎉");
+        document.getElementById("result").style.backgroundColor = "#36581b";
+      } else if (bmi >= 25) {
+        setMsg("You're overweight!");
+        document.getElementById("result").style.backgroundColor = "red";
+      }
+    }
+  }, [bmi]);
 
   return (
     <div>
       <>
         <body>
-          <h1>BMI Calculator</h1>
-          <form onSubmit={handleCalculation}>
+          <form onSubmit={handleCalculations}>
+            <h1>BMI Calculator</h1>
             <div className="user-input">
               <h4>Age</h4>
               <input
@@ -73,13 +79,15 @@ function Main() {
               </div>
               <br />
               <div className="btns">
-                <button>Calculate</button>
-                <button onClick={reset}>Reset</button>
+                <button type="submit">Calculate</button>
+                <button onClick={reset} type="button">
+                  Reset
+                </button>
               </div>
             </div>{" "}
           </form>
-          <div className="results">
-            <h3>Your BMI is {bmi}</h3>
+          <div className="results" id="result">
+            <h3>Your BMI is : {bmi}</h3>
             <p className="p-msg">{msg}</p>{" "}
           </div>
         </body>

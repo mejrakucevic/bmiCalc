@@ -79,4 +79,13 @@ button:hover {
   background-color: #36581b;
   width: 15rem;
   margin: auto;
+  border-radius: 40px;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80px;
+  flex-direction: column;
 }
