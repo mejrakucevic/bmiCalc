@@ -1,8 +1,14 @@
 import "./App.css";
-import Main from "./Main";
+import BmiCalc from "./components/BmiCalculator";
+import CalorieCounter from "./components/CalorieCounter";
 
 function App() {
-  return <Main />;
+  return (
+    <>
+      <BmiCalc />
+      <CalorieCounter />
+    </>
+  );
 }
 
 export default App;

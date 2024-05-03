@@ -14,13 +14,14 @@ body {
 .user-input {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start; /* Adjusted to align items to the left */
   justify-content: center;
   background-color: rgb(227, 227, 227);
-  width: 25%;
+  width: 15%;
   margin: auto;
+  margin-left: 300px; /* Added to remove left margin */
   padding: 20px;
-  border-radius: 70px;
+  border-radius: 50px;
   color: rgb(17, 17, 17);
   -webkit-box-shadow: -1px 17px 46px -20px rgba(255, 255, 255, 0.77);
   -moz-box-shadow: -1px 17px 46px -20px rgba(255, 255, 255, 0.77);
@@ -28,7 +29,7 @@ body {
   margin-bottom: 40px;
 }
 
-.user-input:hover {
+input:hover {
   transform: scale(103%);
   transition: 0.5s;
   cursor: pointer;
@@ -77,9 +78,18 @@ button:hover {
 .results {
   padding: 20px;
   background-color: #36581b;
-  width: 15rem;
   margin: auto;
   border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Adjusted to align items to the left */
+  justify-content: center;
+  background-color: rgb(227, 227, 227);
+  width: 15%;
+  margin: auto;
+  margin-left: 300px; /* Added to remove left margin */
+  text-align: center;
+  align-items: center;
 }
 
 form {

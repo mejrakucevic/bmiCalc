@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../src/Main.css";
+import "../Main.css";
 
 function Main() {
   const [age, setAge] = useState();
